@@ -37,6 +37,7 @@
   text-decoration: none;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  color: #181E34;
   font-family: "Rubik", serif;
 }
 
@@ -54,6 +55,11 @@ a {
     font-size: 14px;
   }
 }
+.image-max {
+  width: 100%;
+  height: auto;
+}
+
 .container {
   max-width: 1440px;
 }
@@ -658,6 +664,120 @@ a {
   font-size: 20px;
   line-height: 1.2;
   padding-right: 1rem;
+}
+
+.users {
+  margin-top: 9.375rem;
+}
+.users-yandex {
+  width: 100%;
+  height: 12.5625rem;
+  background: #3089FF url("../images/vector-yandex.svg") no-repeat right 20px;
+  background-size: contain;
+  border-radius: 1.25rem;
+  padding: 1.875rem;
+  position: relative;
+  cursor: pointer;
+}
+.users-yandex-title {
+  color: #FFF;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+}
+@media (min-width: 768px) {
+  .users-yandex-title {
+    padding-right: 30px;
+  }
+}
+.users-yandex-icons {
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+  width: calc(100% - 60px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.users-yandex-icons i {
+  color: #fff;
+}
+.users-map {
+  margin-top: -20px;
+}
+.users-map-image {
+  transform: translate(-42px, 10px);
+}
+
+.results {
+  width: 100%;
+  height: 17.5rem;
+  background: #3089FF url("../images/results-bg.png") no-repeat 90% bottom;
+  border-radius: 20px;
+  padding: 2.5rem;
+}
+.results-title {
+  width: 100%;
+  max-width: 500px;
+  color: #FFF;
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1.2;
+}
+.results-text {
+  width: 100%;
+  max-width: 787px;
+  color: #FFF;
+  font-size: 18px;
+  line-height: 1.3;
+  margin-top: 25px;
+}
+
+.faq {
+  margin-top: 9.375rem;
+}
+.faq-item {
+  width: 100%;
+  min-height: 3.75rem;
+  background: #F0F1FF;
+  border-radius: 20px;
+  padding: 19px 25px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.faq-item-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #181E34;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  transition: 0.3s;
+}
+.faq-item-title i {
+  color: #3089FF;
+  transition: 0.3s;
+}
+.faq-item-title .icon-plus {
+  transition: 0.3s;
+  transform: rotate(0);
+}
+.faq-item-body {
+  color: #181E34;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  overflow: hidden;
+  padding-top: 0;
+  display: none;
+}
+.faq-item.active .icon-plus {
+  transform: rotate(-45deg);
+  color: rgba(24, 30, 52, 0.5);
+}
+.faq-item.active .faq-item-body {
+  display: block;
+  padding-top: 25px;
 }
 
 /*# sourceMappingURL=style.css.map */

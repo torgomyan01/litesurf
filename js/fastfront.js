@@ -12,6 +12,8 @@ const hovers = document.createElement('STYLE');
 const colors = {
     white: '#FFFFFF',
     black: '#181E34',
+    grey: '#DFDFDF',
+    pinkGray: '#F0F1FF',
     blue: '#3089FF'
 }
 

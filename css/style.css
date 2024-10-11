@@ -709,14 +709,15 @@ a {
   transform: translate(-42px, 10px);
 }
 
-.results {
+.resultsClients {
+  margin-top: 9.375rem;
   width: 100%;
   height: 17.5rem;
   background: #3089FF url("../images/results-bg.png") no-repeat 90% bottom;
   border-radius: 20px;
   padding: 2.5rem;
 }
-.results-title {
+.resultsClients-title {
   width: 100%;
   max-width: 500px;
   color: #FFF;
@@ -724,7 +725,7 @@ a {
   font-size: 34px;
   line-height: 1.2;
 }
-.results-text {
+.resultsClients-text {
   width: 100%;
   max-width: 787px;
   color: #FFF;

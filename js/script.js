@@ -12,6 +12,7 @@ const {
 
 
 const faqItem = document.querySelectorAll('.faq-item');
+const pricesSwitch = document.querySelector('.prices-switch');
 
 faqItem.forEach((item) => {
   item.addEventListener('click', function (){
@@ -21,4 +22,8 @@ faqItem.forEach((item) => {
 
     item.classList.toggle(active)
   })
+})
+
+pricesSwitch.addEventListener('click', function (){
+  pricesSwitch.classList.toggle(active)
 })

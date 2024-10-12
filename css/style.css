@@ -88,6 +88,21 @@ a {
   background: #3089FF;
   color: #fff;
 }
+.btn-blue svg {
+  transition: 0.3s;
+}
+.btn-blue:active {
+  color: #3089FF !important;
+}
+.btn-blue:active circle, .btn-blue:active path {
+  fill: #3089FF;
+  stroke: #3089FF;
+}
+.btn-blue.outline {
+  background: transparent;
+  border: 1px solid #3089FF;
+  color: #3089FF;
+}
 
 .btn-white {
   display: flex;

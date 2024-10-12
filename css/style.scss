@@ -92,6 +92,24 @@ a {
     background: #3089FF;
     color: #fff;
   }
+
+  svg{
+    transition: 0.3s;
+  }
+
+  &:active{
+    color: #3089FF !important;
+    circle, path{
+      fill: #3089FF;
+      stroke: #3089FF;
+    }
+  }
+
+  &.outline{
+    background: transparent;
+    border: 1px solid #3089FF;
+    color: #3089FF;
+  }
 }
 
 .btn-white{

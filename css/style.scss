@@ -963,6 +963,38 @@ a {
     }
   }
 
+  &-fon{
+    width: 100%;
+    height: 19.5rem;
+    background: rgba(240, 241, 255, 0.5) url("../images/prices-fon.png") no-repeat left top;
+    background-size: contain;
+    border-radius: 20px;
+  }
+
+  &-bottom-info{
+    width: 100%;
+    height: 19.5rem;
+    background: rgba(240, 241, 255, 0.5) url("../images/bottom-info-bg.png") no-repeat left top;
+    border-radius: 20px;
+    padding: 2.5rem;
+    &-title{
+      width: 100%;
+      max-width: 814px;
+      color: #181E34;
+      font-weight: 500;
+      font-size: 34px;
+      line-height: 1.2;
+    }
+
+    &-text{
+      width: 583px;
+      color: #181E34;
+      font-size: 18px;
+      line-height: 1.3;
+      margin-top: 1.75rem;
+    }
+  }
+
 
   &-item{
     width: 100%;
@@ -1031,6 +1063,7 @@ a {
       height: 2.5625rem;
       color: #3089FF;
     }
+
 
     &:hover{
       background: #3089FF;

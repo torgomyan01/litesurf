@@ -907,6 +907,35 @@ a {
 .prices-switch.active .prices-switch-item:nth-of-type(2) {
   color: #fff;
 }
+.prices-fon {
+  width: 100%;
+  height: 19.5rem;
+  background: rgba(240, 241, 255, 0.5) url("../images/prices-fon.png") no-repeat left top;
+  background-size: contain;
+  border-radius: 20px;
+}
+.prices-bottom-info {
+  width: 100%;
+  height: 19.5rem;
+  background: rgba(240, 241, 255, 0.5) url("../images/bottom-info-bg.png") no-repeat left top;
+  border-radius: 20px;
+  padding: 2.5rem;
+}
+.prices-bottom-info-title {
+  width: 100%;
+  max-width: 814px;
+  color: #181E34;
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1.2;
+}
+.prices-bottom-info-text {
+  width: 583px;
+  color: #181E34;
+  font-size: 18px;
+  line-height: 1.3;
+  margin-top: 1.75rem;
+}
 .prices-item {
   width: 100%;
   height: 17.875rem;

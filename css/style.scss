@@ -1093,3 +1093,126 @@ a {
     }
   }
 }
+
+.create{
+  margin-top: 9.375rem;
+  width: 100%;
+  height: 250px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: #3089FF url("../images/clients.png") no-repeat 90% bottom;
+  background-size: contain;
+  padding: 2.5625rem 1.875rem;
+
+  &-title{
+    width: 100%;
+    max-width: 726px;
+    color: #FFF;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -1.02px;
+  }
+
+  form{
+    margin-top: 2.5rem;
+    @include flex('s', 'c');
+    button{
+      position: relative;
+      span{
+        width: 9.875rem;
+        height: 1.625rem;
+        flex-shrink: 0;
+        border-radius: 10px;
+        border: 1px solid #3089FF;
+        background: #FFF;
+        color: #181E34;
+        font-size: 1rem;
+        font-weight: 400;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -15px;
+      }
+    }
+  }
+}
+
+
+.we{
+  margin-top: 9.375rem;
+  &-item{
+    display: inline-flex;
+    padding: 0.9375rem 1.5625rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.25rem;
+    background: #F0F1FF;
+    color: #181E34;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 130%;
+    cursor: default;
+    border: 1px solid transparent;
+    transition: 0.3s;
+
+    &:hover{
+      background: #fff;
+      border: 1px solid #B4B8E3;
+    }
+    &.revers{
+      background: #fff;
+      border: 1px solid #B4B8E3;
+    }
+  }
+}
+
+
+.blog{
+  margin-top: 9.375rem;
+
+  &-item{
+    width: 100%;
+    height: 23.1875rem;
+    flex-shrink: 0;
+    border-radius: 1.25rem;
+    background: #F0F1FF;
+
+    @include flex('c', 'c');
+    flex-direction: column;
+    padding: 1.875rem 3.625rem;
+
+    &-title{
+      text-align: center;
+      width: 100%;
+      padding: 0.625rem 1.25rem;
+      border-radius: 10px;
+      background: #3089FF;
+      flex-shrink: 0;
+      color: #FFF;
+      font-size: 1.4375rem;
+      font-weight: 400;
+      margin-bottom: -10px;
+      position: relative;
+    }
+
+    &-type{
+      color: #181E34;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 130%;
+      opacity: 0.6;
+      margin-top: 1.875rem;
+    }
+    &-btn{
+      border-radius: 100px;
+      background: #D6E7FF;
+      color: #181E34;
+      font-size: 18px;
+
+      &:hover, &:focus-visible, &:active{
+        background: #D6E7FF !important;
+      }
+    }
+  }
+}

@@ -26,30 +26,66 @@
 <body>
 
 
-<div class="container">
+<div class="container overflow-hidden">
   <header class="header">
     <nav>
       <div class="d-flex justify-content-start align-items-center">
         <a href="/">
           <img src="images/header-logo.svg" alt="Header logo site" width="148" height="28">
         </a>
-        <span class="ms-30">Трафик и раскрутка интернет проектов</span>
+        <span class="ms-30 d-none d-lg-block">Трафик и раскрутка интернет проектов</span>
       </div>
       <div class="d-flex justify-content-end align-items-center">
-        <div class="dropdown">
+        <div class="dropdown language">
           <button class="btn btn-outline-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
                   aria-expanded="false">
-            <i class="icon-earth me-2"></i>
-            Русский
+            <i class="icon-earth me-2 d-none d-md-block"></i>
+            <span class="d-none d-md-block">Русский</span>
+            <img src="images/flag-RU.png" alt="flag" class="w-28 h-28 d-block d-md-none" width="56" height="56">
             <i class="icon-down"></i>
           </button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Русский </a></li>
-            <li><a class="dropdown-item" href="#">Английский</a></li>
+            <li class="mb-1">
+              <a class="dropdown-item" href="#">
+                <span class="d-none d-md-block">Русский</span>
+                <img src="images/flag-RU.png" alt="flag" class="w-28 h-28 d-block d-md-none" width="56" height="56">
+              </a>
+            </li>
+            <li class="mb-1">
+              <a class="dropdown-item" href="#">
+                <span class="d-none d-md-block">Английский</span>
+                <img src="images/flag-usa.png" alt="flag" class="w-28 h-28 d-block d-md-none" width="56" height="56">
+              </a>
+            </li>
+            <li class="mb-1">
+              <a class="dropdown-item" href="#">
+                <span class="d-none d-md-block">Украинский</span>
+                <img src="images/flag-UK.png" alt="flag" class="w-28 h-28 d-block d-md-none" width="56" height="56">
+              </a>
+            </li>
           </ul>
         </div>
-        <button class="btn btn-outline-light">Вход</button>
-        <button class="btn btn-dark">Регистрация</button>
+        <div class="position-relative z-2">
+          <div class="mobile-menu-board">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="mobile-menu-board-body">
+            <a href="#" class="mobile-menu-board-body-item">
+              Вход
+            </a>
+            <a href="#" class="mobile-menu-board-body-item c-blue">
+              Регистрация
+            </a>
+            <a href="#" class="mobile-menu-board-body-item mt-30">
+              Поддержка
+            </a>
+          </div>
+        </div>
+        <div class="mobile-menu-board-fon"></div>
+        <button class="btn btn-outline-light d-none d-md-block">Вход</button>
+        <button class="btn btn-dark d-none d-md-block">Регистрация</button>
       </div>
     </nav>
 
@@ -1608,6 +1644,7 @@
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">Русский </a></li>
                 <li><a class="dropdown-item" href="#">Английский</a></li>
+                <li><a class="dropdown-item" href="#">Украинский</a></li>
               </ul>
             </div>
             <button class="btn btn-outline-light">Вход</button>

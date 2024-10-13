@@ -355,6 +355,12 @@ a {
       top: 2rem;
       left: 1.875rem;
       border-radius: 50%;
+      cursor: pointer;
+      transition: 0.3s;
+      transform: scale(1);
+      &:hover{
+        transform: scale(1.1);
+      }
       i{
         font-size: 32px;
         color: #fff;
@@ -1233,4 +1239,26 @@ a {
       }
     }
   }
+}
+
+.apps{
+  @include flex('s', 'c');
+   &-item{
+     width: 42px;
+     height: 42px;
+     background: #181E34;
+     border-radius: 50%;
+     @include flex('c', 'c');
+     i{
+       color: #fff;
+       font-size: 20px;
+     }
+
+     &:nth-of-type(2){
+       border: 2px solid #fff;
+       width: 46px;
+       height: 46px;
+       margin-left: -7px;
+     }
+   }
 }

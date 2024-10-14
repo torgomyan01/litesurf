@@ -42,3 +42,30 @@ mobileMenuBoard.addEventListener('click', function (){
     mobileMenuBoardFon.classList.add(active);
   }
 })
+
+
+mobileMenuBoardFon.addEventListener('click', function (){
+  mobileMenuBoard.classList.remove(active);
+  mobileMenuBoardBody.classList.remove(active);
+  mobileMenuBoardFon.classList.remove(active);
+})
+
+
+const resultsItemTitle = document.querySelectorAll('.results-item-title');
+
+resultsItemTitle.forEach((item) => {
+  changeMarginTop(item);
+})
+
+
+window.addEventListener('resize', function (){
+  resultsItemTitle.forEach((item) => {
+    changeMarginTop(item);
+  })
+})
+
+
+
+function changeMarginTop(item){
+  item.parentElement.style.marginTop = `${item.offsetHeight + 20}px`;
+}

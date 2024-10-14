@@ -172,7 +172,6 @@ class ConvertFlex {
         let mediaQuery = '';
         let result = '';
 
-        // Ստուգել մեդիա հարցման համար
         const mediaKey = flexString.match(/^(flex-(sm|md|lg|xl|xxl)-)/);
         if (mediaKey) {
             const size = mediaKey[2];
@@ -180,18 +179,14 @@ class ConvertFlex {
             flexString = flexString.replace(mediaKey[1], 'flex-'); // Հեռացնել մեդիա մասը
         }
 
-        // Ստուգել, արդյոք սթրինգը սկսվում է 'flex-'֊ով
         if (!flexString.startsWith('flex-')) {
             return 'Invalid flex shorthand';
         }
 
-        // Ստանալ գրելաձևերը
         const styles = flexString.slice(5).split('-');
 
-        // Սկզբնական արդյունքը
         result += 'display: flex;\n';
 
-        // Ստուգել և կոնվերտացնել յուրաքանչյուր գրելաձև
         styles.forEach(style => {
             if (flexMappings[style]) {
                 result += `  ${flexMappings[style]}\n`;
@@ -200,7 +195,6 @@ class ConvertFlex {
             }
         });
 
-        // Եթե կա մեդիա հարցում, ավելացնել այն
         if (mediaQuery) {
             result = `${mediaQuery}  ${result.replace(/\n/g, '\n  ')}\n}\n}`;
         }
@@ -211,7 +205,9 @@ class ConvertFlex {
 
 
 allElem.forEach((item) => {
-    item.classList.forEach((className) => startConvertingClasses(className, item))
+    item.classList.forEach((className) => {
+        startConvertingClasses(className, item)
+    })
     if (String(item.className).includes('!') || String(item.className).includes('%')) {
         item.className = item.className.replace(/[!,%]/g, '')
     }
@@ -219,6 +215,7 @@ allElem.forEach((item) => {
 
 
 function startConvertingClasses(className, item){
+
     if(className.includes('hover')){
         const startIndex = className.indexOf('child:')
         const endIndex = className.indexOf(']]');
@@ -272,6 +269,7 @@ function startConvertingClasses(className, item){
 
 
     const checkingImportant = chekWork(className);
+
     const type = classTypes.find((classType) => !className.indexOf(checkingImportant + classType.minClass) && !oldClasses.includes(className));
 
     if (type && !className.includes('hover:')) {
@@ -280,6 +278,8 @@ function startConvertingClasses(className, item){
             percent: className.includes('%') ? '%' : 'rem',
             newClassNem: className.replace(/[!,%]/g, '')
         }
+
+
 
 
         const classCount = newClassNem.split('-')[1];
@@ -371,7 +371,9 @@ function startCreateStyle(classCountTwo, type, newClassNem, percent, checkInp, c
             medias.innerHTML = `${medias.innerHTML} @media (min-width: ${classCount}px){.${newClassNem}{${type.styleName}: ${printStyle(type, className, percent, checkInp, classCountTwo)}}}`;
         }
     } else {
+
         if (newClassNem.includes(type.minClass) && !oldClasses.includes(newClassNem)) {
+
             oldClasses.push(newClassNem);
             style.innerHTML = `${style.innerHTML} .${newClassNem}{${type.styleName}: ${printStyle(type, className, percent, checkInp, classCount)}}`;
         }
@@ -382,6 +384,7 @@ function startCreateStyle(classCountTwo, type, newClassNem, percent, checkInp, c
 function printStyle(type, className, percent, checkInp, classCount) {
 
     const percentOrRem = `${className.includes('%') ? classCount : classCount / 16}${percent} ${checkInp}`;
+
     switch (type.minClass) {
         case costs.fw:
             return classCount;

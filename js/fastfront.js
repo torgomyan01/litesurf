@@ -211,11 +211,7 @@ class ConvertFlex {
 
 
 allElem.forEach((item) => {
-    item.classList.forEach((className) => {
-
-        startConvertingClasses(className, item)
-
-    })
+    item.classList.forEach((className) => startConvertingClasses(className, item))
     if (String(item.className).includes('!') || String(item.className).includes('%')) {
         item.className = item.className.replace(/[!,%]/g, '')
     }
@@ -369,6 +365,11 @@ function startCreateStyle(classCountTwo, type, newClassNem, percent, checkInp, c
                 medias.innerHTML = `${medias.innerHTML} @media (min-width: ${_size.size}px){.${newClassNem}{${type.styleName}: ${printStyle(type, className, percent, checkInp, classCountTwo)}}}`;
             }
         })
+
+        if(!!+classCount){
+            oldClasses.push(newClassNem);
+            medias.innerHTML = `${medias.innerHTML} @media (min-width: ${classCount}px){.${newClassNem}{${type.styleName}: ${printStyle(type, className, percent, checkInp, classCountTwo)}}}`;
+        }
     } else {
         if (newClassNem.includes(type.minClass) && !oldClasses.includes(newClassNem)) {
             oldClasses.push(newClassNem);
@@ -379,6 +380,7 @@ function startCreateStyle(classCountTwo, type, newClassNem, percent, checkInp, c
 
 
 function printStyle(type, className, percent, checkInp, classCount) {
+
     const percentOrRem = `${className.includes('%') ? classCount : classCount / 16}${percent} ${checkInp}`;
     switch (type.minClass) {
         case costs.fw:

@@ -18,8 +18,12 @@ const mobileMenuBoardBody = document.querySelector('.mobile-menu-board-body');
 const mobileMenuBoardFon = document.querySelector('.mobile-menu-board-fon');
 
 faqItem.forEach((item) => {
+
+  item.id = Math.floor(Math.random() * 2000) + '_and';
+
   item.addEventListener('click', function (){
     faqItem.forEach((_item) => {
+      if(this.id !== _item.id)
         _item.classList.remove(active);
     })
 

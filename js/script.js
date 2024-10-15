@@ -71,5 +71,45 @@ window.addEventListener('resize', function (){
 
 
 function changeMarginTop(item){
-  item.parentElement.style.marginTop = `${item.offsetHeight + 20}px`;
+
+  if(window.innerWidth < 992){
+    item.parentElement.style.marginTop = `${item.offsetHeight + 20}px`;
+  }
 }
+
+// COOKIE
+const messageCookie = document.querySelector('.message-cookie');
+const messageCookieButton = document.querySelector('.message-cookie button');
+const messageCookieStatus = +window.localStorage.getItem('cookie');
+
+if(!messageCookieStatus){
+  messageCookie.classList.add(active);
+}
+
+messageCookieButton.addEventListener('click', function (){
+  messageCookie.classList.remove(active)
+  window.localStorage.setItem('cookie', '1')
+})
+
+// form Validation
+const defForm = document.querySelectorAll('.def-form');
+
+defForm.forEach((form) => {
+
+  console.log(form.link.parentElement)
+
+  form.link.parentElement.insertAdjacentHTML('beforeend',`
+    <span class="error-message">Текст ошибки в пять слов или больше</span>
+  `)
+
+  form.addEventListener('submit', function (e){
+    e.preventDefault();
+    const getValue = e.target.link.value;
+
+    if(getValue.length < 5){
+      form.classList.add('error')
+    } else {
+      form.classList.remove('error')
+    }
+  })
+})

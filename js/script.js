@@ -96,8 +96,6 @@ const defForm = document.querySelectorAll('.def-form');
 
 defForm.forEach((form) => {
 
-  console.log(form.link.parentElement)
-
   form.link.parentElement.insertAdjacentHTML('beforeend',`
     <span class="error-message">Текст ошибки в пять слов или больше</span>
   `)
@@ -111,5 +109,20 @@ defForm.forEach((form) => {
     } else {
       form.classList.remove('error')
     }
+  })
+})
+
+const controlItem = document.querySelectorAll('.control-item');
+const imgSee = document.getElementById('img-see');
+
+const modalSeeImage = new bootstrap.Modal('#see-images', {
+  keyboard: false
+})
+
+controlItem.forEach((imgBlock) => {
+  imgBlock.addEventListener('click', function (){
+    const imageUrl = imgBlock.dataset.see;
+    imgSee.setAttribute('src', imageUrl);
+    modalSeeImage.show()
   })
 })

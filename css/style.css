@@ -2137,6 +2137,7 @@ a {
   position: relative;
   overflow: hidden;
   border-radius: 20px 20px 0 0;
+  width: 100%;
 }
 .modal #img-see {
   border-radius: 20px;
